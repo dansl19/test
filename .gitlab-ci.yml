@@ -52,7 +52,7 @@ release:
     - echo "Pulling docker image from Container Registry"
     - docker pull ${CONTAINER_IMAGE_BUILT}
     - echo "Logging to Container Registry at ${CI_REGISTRY}"
-    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    - docker login -u dansl1982 -p dansl071282
     - echo "Pushing to Container Registry..."
     - docker tag ${CONTAINER_IMAGE_BUILT} ${CONTAINER_IMAGE}:$(cat VERSION)
     - docker push ${CONTAINER_IMAGE}:$(cat VERSION)
