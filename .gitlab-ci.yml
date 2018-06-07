@@ -23,7 +23,7 @@ build:
   script:
     - echo "Building Dockerfile-based application..."
     - docker build -t ${CONTAINER_IMAGE_BUILT} .
-    - docker login -u ${CI_REGISTRY_USER} -p ${CI_REGISTRY_PASSWORD}
+    - docker login -u dansl1982 -p dansl071282
     - echo "Pushing to the Container Registry..."
     - docker push ${CONTAINER_IMAGE_BUILT}
 #  only:
