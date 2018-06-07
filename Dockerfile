@@ -1,4 +1,3 @@
-# A very rudimentary mysql service
 #
 # This is intended to have mysql client run remotely. It has a default user setup as 'admin' with password 'mysql-server'
 # 
