@@ -4,7 +4,7 @@ stages:
   - release
 
 variables:
-  CONTAINER_IMAGE: dansl1982
+  CONTAINER_IMAGE: dansl1982/
   CONTAINER_IMAGE_BUILT: ${CONTAINER_IMAGE}:${CI_COMMIT_REF_SLUG}_${CI_COMMIT_SHA}
   CONTAINER_IMAGE_LATEST: ${CONTAINER_IMAGE}:latest
   CI_REGISTRY: https://index.docker.io/v1/  # container registry URL
@@ -23,7 +23,7 @@ build:
     - echo "Building Dockerfile-based application..."
     - docker build -t ${CONTAINER_IMAGE_BUILT} .
     - docker login -u dansl1982 -p dansl071282
-    - echo "Pushing to the Container Registry..."
+    - echo "Pushing to the Container Registry... ${CONTAINER_IMAGE_BUILT}"
     - docker push ${CONTAINER_IMAGE_BUILT}
 #  only:
 #    - tags 
