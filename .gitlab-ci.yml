@@ -8,7 +8,6 @@ variables:
   CONTAINER_IMAGE_BUILT: ${CONTAINER_IMAGE}:${CI_COMMIT_REF_SLUG}_${CI_COMMIT_SHA}
   CONTAINER_IMAGE_LATEST: ${CONTAINER_IMAGE}:latest
   CI_REGISTRY: index.docker.io  # container registry URL
-  CI_REGESTRY_IMAGE: https://index.docker.io/v1/docker1982
   CI_REGISTRY_PASSWORD: dansl071282
   CI_REGISTRY_USER: dansl1982
 
