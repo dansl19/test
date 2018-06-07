@@ -4,7 +4,7 @@ stages:
   - release
 
 variables:
-  CONTAINER_IMAGE: dansl1982/
+  CONTAINER_IMAGE: dansl1982
   CONTAINER_IMAGE_BUILT: ${CONTAINER_IMAGE}:${CI_COMMIT_REF_SLUG}_${CI_COMMIT_SHA}
   CONTAINER_IMAGE_LATEST: ${CONTAINER_IMAGE}:latest
   CI_REGISTRY: https://index.docker.io/v1/  # container registry URL
