@@ -6,7 +6,6 @@
 #
 # docker build -t="mysql-server" .
 #
-# Launch the server
 #
 # docker run -d mysql-server
 #
