@@ -7,7 +7,6 @@
 # docker build -t="mysql-server" .
 #
 #
-# docker run -d mysql-server
 #
 # Find the IP of the server
 #
