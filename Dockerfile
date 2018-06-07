@@ -6,7 +6,6 @@
 #
 # docker build -t="mysql-server" .
 #
-#
 # Find the IP of the server
 #
 # MYSQL_IP=`docker inspect CONTAINER_ID | python -c 'import json,sys;obj=json.load(sys.stdin);print obj[0]["NetworkSettings"]["IPAddress"]'`
