@@ -28,37 +28,37 @@ build:
 #  only:
 #    - tags 
 
-# run tests against built image
-test:
-  stage: test
-  tags: 
-    - docker
-  script:
-    - exit 0
-#  only: 
-#    - tags
-
-# tag container image that passed the tests successfully
-# and push it to the registry
-release:
-  stage: release
-  tags: 
-    - docker
-  image: docker:latest
-  services:
-  - docker:dind
-  script:
-    - echo "Pulling docker image from Container Registry"
-    - docker pull ${CONTAINER_IMAGE_BUILT}
-    - echo "Logging to Container Registry at ${CI_REGISTRY}"
-    - docker login -u dansl1982 -p dansl071282
-    - echo "Pushing to Container Registry..."
-    - docker tag ${CONTAINER_IMAGE_BUILT} ${CONTAINER_IMAGE}:$(cat VERSION)
-    - docker push ${CONTAINER_IMAGE}:$(cat VERSION)
-    - docker tag ${CONTAINER_IMAGE}:$(cat VERSION) ${CONTAINER_IMAGE_LATEST}
-    - docker push ${CONTAINER_IMAGE_LATEST}
-    - echo ""
-#  only:
+## run tests against built image
+#test:
+#  stage: test
+#  tags: 
+#    - docker
+#  script:
+#    - exit 0
+##  only: 
+##    - tags
+#
+## tag container image that passed the tests successfully
+## and push it to the registry
+#release:
+#  stage: release
+#  tags: 
+#    - docker
+#  image: docker:latest
+#  services:
+#  - docker:dind
+#  script:
+#    - echo "Pulling docker image from Container Registry"
+#    - docker pull ${CONTAINER_IMAGE_BUILT}
+#    - echo "Logging to Container Registry at ${CI_REGISTRY}"
+#    - docker login -u dansl1982 -p dansl071282
+#    - echo "Pushing to Container Registry..."
+#    - docker tag ${CONTAINER_IMAGE_BUILT} ${CONTAINER_IMAGE}:$(cat VERSION)
+#    - docker push ${CONTAINER_IMAGE}:$(cat VERSION)
+#    - docker tag ${CONTAINER_IMAGE}:$(cat VERSION) ${CONTAINER_IMAGE_LATEST}
+#    - docker push ${CONTAINER_IMAGE_LATEST}
+#    - echo ""
+##  only:
 #    - tags
 
 ## deploy to staging environment
