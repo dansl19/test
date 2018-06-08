@@ -20,6 +20,7 @@ build:
   services:
   - docker:dind
   script:
+    - export DOCKER_HOST="tcp://localhost:2375"
     - echo "Building Dockerfile-based application..."
     - docker build -t ${CONTAINER_IMAGE_BUILT} .
     - docker login -u dansl1982 -p dansl071282
