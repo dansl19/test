@@ -14,8 +14,6 @@ variables:
 # build container image
 build:
   stage: build
-  tags: 
-    - docker
   image: docker:latest
   services:
   - docker:dind
